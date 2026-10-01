@@ -65,18 +65,18 @@ public class UserQueries
                 (
                         Connection con = DBConnection.getConnection();
                         Statement st = con.createStatement();
-                        ResultSet rs = ps.executeQuery(query)
+                        ResultSet rs = st.executeQuery(query)
                         )
         {
             while (rs.next())
             {
                 User user = new User(
-                        rs.getInt("id");
-                        rs.getString();
-                        rs.getString();
-                        rs.getString();
-                        rs.getString();
-                        )
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("email"),
+                        rs.getString("password"),
+                        rs.getString("role")
+                        );
                 users.add(user);
             }
         }
@@ -84,6 +84,7 @@ public class UserQueries
         {
             System.out.println("SQLException: " + e.getMessage());
         }
+        return users;
     }
 
     public boolean deleteUser(int id)
