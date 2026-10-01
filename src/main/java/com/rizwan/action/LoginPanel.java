@@ -3,12 +3,12 @@ package com.rizwan.action;
 import com.rizwan.service.LoginService;
 
 import java.util.Scanner;
-
 /**
  *
  * Hello this is testing ..
  *
  */
+
 public class LoginPanel
 {
     public static void letsLogin()
