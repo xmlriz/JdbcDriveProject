@@ -47,6 +47,11 @@ public class LoginForm
             String username = usernametf.getText();
             String password = passwordtf.getText();
 
+            if(username.isBlank() || password.isBlank()){
+                JOptionPane.showMessageDialog(frm,"Login failed","Login status",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
             if(LoginService.isUserValid(username,password))
             {
                 JOptionPane.showMessageDialog(frm,"Login success","login status",JOptionPane.INFORMATION_MESSAGE);
